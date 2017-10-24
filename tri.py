@@ -8,7 +8,9 @@ class Some:
 	def __init__(self, x,y):
 		self.x = x
 		self.y = y
-		self.matrix = [[randint(1,99) for i in range(self.y)] for a in range(self.x]
+		self.matrix = [[randint(1,99) for i in range(self.y)] for a in range(self.x)]
+			#for k in range(self.y):
+				#self.matrix[i].append(randint(10,100))
 	def gogo(self):
 		ce = -1
 		kiki = 0
@@ -33,9 +35,13 @@ def Main():
 	argo = argparse.ArgumentParser("Enter two numbers")
 	argo.add_argument("-a",dest = "first",help = "Enter first number",type = int)
 	argo.add_argument("-b",dest = "sec",help = "Enter first number",type = int)
+
 	do = argo.parse_args()
-	soso = Some(do.first,do.sec)
-	soso.gogo()
+	if (not do.first) | (not do.sec):
+		print("Put all arguments pls")
+	else:	
+		soso = Some(do.first,do.sec)
+		soso.gogo()
 
 if __name__ == "__main__":
 	Main()	
